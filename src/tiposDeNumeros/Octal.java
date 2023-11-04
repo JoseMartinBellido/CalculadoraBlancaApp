@@ -105,7 +105,7 @@ public class Octal {
     if (esNegativo) 
       parteBinariaEntera = '-' + parteBinariaEntera;
     
-    if (parteBinariaDecimal != "") 
+    if (!parteBinariaDecimal.isEmpty()) 
       parteBinariaEntera += '.';
     
     String resultadoBinario = parteBinariaEntera + parteBinariaDecimal;

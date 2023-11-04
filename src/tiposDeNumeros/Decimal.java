@@ -91,7 +91,7 @@ public class Decimal {
     if (esNegativo) 
       parteEnteraBinaria = '-' + parteEnteraBinaria;
     
-    if (parteDecimalBinaria != "") 
+    if (!parteDecimalBinaria.isEmpty()) 
       parteEnteraBinaria += '.';
     
     String resultadoBinario = parteEnteraBinaria + parteDecimalBinaria;

@@ -145,7 +145,7 @@ public class Hexadecimal {
     if (esNegativo) 
       parteBinariaEntera = '-' + parteBinariaEntera;
     
-    if (parteBinariaDecimal != "") 
+    if (!parteBinariaDecimal.isEmpty()) 
       parteBinariaEntera += '.';
     
     String resultadoBinario = parteBinariaEntera + parteBinariaDecimal;
@@ -166,56 +166,6 @@ public class Hexadecimal {
      return Binario.binarioToOctal(hexadecimalToBinario(numero));
    }
    
-   // -------------------------------------------- Operaciones ----------------------
-   
-   // Suma - Convertimos a decimal y sumamos
-   
-   public String suma(Hexadecimal hexa2) {
-     double numeroHexadecimalBaseDecimal = Double.parseDouble(Hexadecimal.hexadecimalToDecimal(numeroHexadecimal));
-     double numeroHexadecimal2BaseDecimal = Double.parseDouble(Hexadecimal.hexadecimalToDecimal(hexa2.getNumeroHexadecimal()));
-     
-     double suma = numeroHexadecimalBaseDecimal + numeroHexadecimal2BaseDecimal;
-     String sumaString = String.valueOf(suma);
-     
-     return Decimal.decimalToHexadecimal(sumaString);   
-     
-   }
-   
-   // Al primero le resta el segundo
-   public String resta(Hexadecimal hexa2) {
-     double numeroHexadecimalBaseDecimal = Double.parseDouble(Hexadecimal.hexadecimalToDecimal(numeroHexadecimal));
-     double numeroHexadecimal2BaseDecimal = Double.parseDouble(Hexadecimal.hexadecimalToDecimal(hexa2.getNumeroHexadecimal()));
-     
-     double resta = numeroHexadecimalBaseDecimal - numeroHexadecimal2BaseDecimal;
-     String restaString = String.valueOf(resta);
-     
-     return Decimal.decimalToHexadecimal(restaString);
-
-   }
-   
-   // Producto
-   public String producto(Hexadecimal hexa2) {
-     double numeroHexadecimalBaseDecimal = Double.parseDouble(Hexadecimal.hexadecimalToDecimal(numeroHexadecimal));
-     double numeroHexadecimal2BaseDecimal = Double.parseDouble(Hexadecimal.hexadecimalToDecimal(hexa2.getNumeroHexadecimal()));
-     
-     double producto = numeroHexadecimalBaseDecimal * numeroHexadecimal2BaseDecimal;
-     String productoString = String.valueOf(producto);
-     
-     return Decimal.decimalToHexadecimal(productoString);
-
-   }
-   
-   // División. El primero lo divide entre el segundo
-   public String division(Hexadecimal hexa2) {
-     double numeroHexadecimalBaseDecimal = Double.parseDouble(Hexadecimal.hexadecimalToDecimal(numeroHexadecimal));
-     double numeroHexadecimal2BaseDecimal = Double.parseDouble(Hexadecimal.hexadecimalToDecimal(hexa2.getNumeroHexadecimal()));
-     
-     double division = numeroHexadecimalBaseDecimal / numeroHexadecimal2BaseDecimal;
-     String divisionString = String.valueOf(division);
-     
-     return Decimal.decimalToHexadecimal(divisionString);
-
-   } 
   
   
 }

@@ -181,7 +181,7 @@ public class Binario {
     if(esNegativo) 
       resultadoParteEntera = '-' + resultadoParteEntera;
     
-    if(!resultadoParteDecimal.equals("")) resultadoParteEntera += '.';
+    if(!resultadoParteDecimal.isEmpty()) resultadoParteEntera += '.';
       
     String resultado  = resultadoParteEntera + resultadoParteDecimal;
     
@@ -258,7 +258,7 @@ public class Binario {
     if(esNegativo) 
       resultadoParteEntera = '-' + resultadoParteEntera;
     
-    if(!resultadoParteDecimal.equals("")) resultadoParteEntera += '.';
+    if(!resultadoParteDecimal.isEmpty()) resultadoParteEntera += '.';
       
     String resultado  = resultadoParteEntera + resultadoParteDecimal;
     
