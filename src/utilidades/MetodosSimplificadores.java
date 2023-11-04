@@ -11,11 +11,20 @@ public class MetodosSimplificadores{
   
   private static  Scanner sc;
   
-  public MetodosSimplificadores(Scanner sc) {
-    this.sc = sc;
+  public MetodosSimplificadores() {
+    Scanner scanner = sc;
   }
+  
+  // Setter
+  
+  public void setSc(Scanner sc) {
+    MetodosSimplificadores.sc = sc;
+  }
+  
+  
   // ----------------------- Método para decir si es positivo o negativo, sacar parte entera y decimal. Estático. -----------------------
   
+
   public static String[] descompone (String numero) {
     
     // Devolvemos un array con 3 componentes. El primero será 1 o 0 dependiendo de si es o no negativo.

@@ -2,7 +2,6 @@ package application;
 
 import java.util.Scanner;
 
-import tiposDeNumeros.*;
 import utilidades.MetodosSimplificadores;
 
 public class Calculadora {
@@ -11,7 +10,9 @@ public class Calculadora {
 
     Scanner sc = new Scanner(System.in);
     
-    MetodosSimplificadores ms = new MetodosSimplificadores(sc);
+    MetodosSimplificadores ms = new MetodosSimplificadores();
+    
+    ms.setSc(sc);
     
     String flag;
     
