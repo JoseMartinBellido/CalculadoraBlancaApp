@@ -1,10 +1,15 @@
 package tiposDeNumeros;
 
+import java.math.BigDecimal;
+
 import utilidades.MetodosSimplificadores;
 
 public class Binario {
 
   String numeroBinario;
+  
+  // Constantes
+  public static final BigDecimal BASE = new BigDecimal("2");
 
   public Binario(String numeroBinario) {
     this.numeroBinario = numeroBinario;
@@ -53,16 +58,20 @@ public class Binario {
     
     // Declaro la parte entera y decimal de la conversión y del numero inicial
     
-    int parteEntera = 0;  
-    double parteDecimal = 0;
+    BigDecimal parteEntera = new BigDecimal("0");  
+    BigDecimal parteDecimal = new BigDecimal("0");
     
     String binarioEntero = descomponeArray[1];
 
     for (int i = 0; i < binarioEntero.length(); i++) {
       
       // Si el número es un 1, sumamos a la parte entera 2^(indice de la posición calculada con el i del bucle for)
-      if (binarioEntero.charAt(i) == '1') 
-        parteEntera += Math.pow(2, (binarioEntero.length() - 1 - i));        
+      if (binarioEntero.charAt(i) == '1') {
+        int exponente = binarioEntero.length() - 1 - i;
+        BigDecimal parteASumar = BASE.pow(exponente);
+        parteEntera = parteEntera.add(parteASumar);
+      }
+      
     }
     
     // Hacemos lo mismo para la parte decimal en caso de que exista, recalculando dependiendo del i
@@ -73,16 +82,20 @@ public class Binario {
       
       for(int i = 0; i < binarioDecimal.length(); i++) {
         
-        if (binarioDecimal.charAt(i) == '1')
-          parteDecimal += Math.pow(2, -i-1);
+        if (binarioDecimal.charAt(i) == '1') {
+          int exponente = i + 1;
+          BigDecimal parteASumar = BigDecimal.ONE.divide(BASE.pow(exponente));
+          parteDecimal = parteDecimal.add(parteASumar);
+          
+        }
       }
     }
-
-    double resultadoDouble = parteEntera + parteDecimal;
+    
+    BigDecimal resultadoBigDecimal = parteEntera.add(parteDecimal);
     
     String resultado;
-    if (esNegativo) resultado = '-' + String.valueOf(resultadoDouble);
-    else resultado = String.valueOf(resultadoDouble);
+    if (esNegativo) resultado = '-' + resultadoBigDecimal.toString();
+    else resultado = resultadoBigDecimal.toString();
     
     return resultado;
     
@@ -266,8 +279,6 @@ public class Binario {
     
 
   }
-  
-
   
   
 }

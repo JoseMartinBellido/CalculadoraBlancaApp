@@ -1,10 +1,17 @@
 package tiposDeNumeros;
 
+import java.math.BigDecimal;
+
 import utilidades.MetodosSimplificadores;
 
 public class Decimal {
 
   String numeroDecimal;
+  
+  // Constantes
+  public static final BigDecimal BASE_BINARIA = new BigDecimal("2");
+  
+  // Constructor
 
   public Decimal(String numeroDecimal) {
     this.numeroDecimal = numeroDecimal;
@@ -55,15 +62,15 @@ public class Decimal {
     // Una vez introducimos el número, tenemos por seguro que va a tener formato en base 10. 
     // Con lo cual, hacer lo siguiente no puede dar error.
     
-    Long parteEnteraBaseDecimal = Long.parseLong(descomponeArray[1]);
+    BigDecimal parteEnteraBaseDecimal = new BigDecimal(descomponeArray[1]);
     String parteEnteraBinaria = "";
     String parteDecimalBinaria = "";
     
-    while (parteEnteraBaseDecimal > 1) {
+    while (parteEnteraBaseDecimal.compareTo(BigDecimal.ONE) == 1) {
       
       // División entre enteros hecha para obtener cociente y resto sin decimales (int)
-      parteEnteraBinaria = String.valueOf(parteEnteraBaseDecimal % 2) + parteEnteraBinaria;
-      parteEnteraBaseDecimal /= 2;
+      parteEnteraBinaria = parteEnteraBaseDecimal.remainder(BASE_BINARIA).toString() + parteEnteraBinaria;
+      parteEnteraBaseDecimal = parteEnteraBaseDecimal.divideToIntegralValue(BASE_BINARIA);
 
     }
     
@@ -74,13 +81,13 @@ public class Decimal {
     
     if (descomponeArray[2] != null) {
       
-      Double parteDecimalBaseDecimal = Double.parseDouble("0." + descomponeArray[2]);
+      BigDecimal parteDecimalBaseDecimal = new BigDecimal("0." + descomponeArray[2]);
       
       for(int i = 0; i < 13; i++) {
         
-        int numeroAAgregar = (int) (parteDecimalBaseDecimal * 2);
+        int numeroAAgregar = (parteDecimalBaseDecimal.multiply(BASE_BINARIA).intValue());
         
-        parteDecimalBaseDecimal = (parteDecimalBaseDecimal * 2) - numeroAAgregar;
+        parteDecimalBaseDecimal = (parteDecimalBaseDecimal.multiply(BASE_BINARIA)).subtract(new BigDecimal(numeroAAgregar));
         
         parteDecimalBinaria += String.valueOf(numeroAAgregar);
         
@@ -122,41 +129,41 @@ public class Decimal {
   // Suma - Convertimos a double y sumamos, para volver a dar un String
   
   public String suma(Decimal decimal) {
-    double numeroBaseDecimal = Double.parseDouble(numeroDecimal);
-    double numero2BaseDecimal = Double.parseDouble(decimal.getNumeroDecimal());
+    BigDecimal numeroBaseDecimal = new BigDecimal(numeroDecimal);
+    BigDecimal numero2BaseDecimal = new BigDecimal(decimal.getNumeroDecimal());
     
-    double suma = numeroBaseDecimal + numero2BaseDecimal;
-    return String.valueOf(suma);
+    BigDecimal suma = numeroBaseDecimal.add(numero2BaseDecimal);
+    return suma.toString();
 
   }
   
   // Al primero le resta el segundo
   public String resta(Decimal decimal) {
-    double numeroBaseDecimal = Double.parseDouble(numeroDecimal);
-    double numero2BaseDecimal = Double.parseDouble(decimal.getNumeroDecimal());
+    BigDecimal numeroBaseDecimal = new BigDecimal(numeroDecimal);
+    BigDecimal numero2BaseDecimal = new BigDecimal(decimal.getNumeroDecimal());
     
-    double resta = numeroBaseDecimal - numero2BaseDecimal;
-    return String.valueOf(resta);
+    BigDecimal resta = numeroBaseDecimal.subtract(numero2BaseDecimal);
+    return resta.toString();
 
   }
   
   // Producto
   public String producto(Decimal decimal) {
-    double numeroBaseDecimal = Double.parseDouble(numeroDecimal);
-    double numero2BaseDecimal = Double.parseDouble(decimal.getNumeroDecimal());
+    BigDecimal numeroBaseDecimal = new BigDecimal(numeroDecimal);
+    BigDecimal numero2BaseDecimal = new BigDecimal(decimal.getNumeroDecimal());
     
-    double producto = numeroBaseDecimal * numero2BaseDecimal;
-    return String.valueOf(producto);
+    BigDecimal producto = numeroBaseDecimal.multiply(numero2BaseDecimal);
+    return producto.toString();
 
   }
   
   // División. El primero lo divide entre el segundo
   public String division(Decimal decimal) {
-    double numeroBaseDecimal = Double.parseDouble(numeroDecimal);
-    double numero2BaseDecimal = Double.parseDouble(decimal.getNumeroDecimal());
+    BigDecimal numeroBaseDecimal = new BigDecimal(numeroDecimal);
+    BigDecimal numero2BaseDecimal = new BigDecimal(decimal.getNumeroDecimal());
     
-    double division = numeroBaseDecimal / numero2BaseDecimal;
-    return String.valueOf(division);
+    BigDecimal division = numeroBaseDecimal.divide(numero2BaseDecimal);
+    return division.toString();
 
   } 
   
