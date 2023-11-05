@@ -37,14 +37,14 @@ public class Binario {
 
   
   // Método de Binario a Binario. Estático.
-  public static String binarioToBinario(String numero) {
+  public static String toBinario(String numero) {
     return numero;
     
   }
   
   // Método de Binario a Decimal. Estático.
   
-  public static String binarioToDecimal(String numero) {
+  public static String toDecimal(String numero) {
     
     String[] descomponeArray = MetodosSimplificadores.descompone(numero);
     
@@ -90,7 +90,7 @@ public class Binario {
   
   // Método de Binario a Hexadecimal. Estático.
   
-  public static String binarioToHexadecimal (String numero) {
+  public static String toHexadecimal (String numero) {
     
     String[] descomponeArray = MetodosSimplificadores.descompone(numero);
     
@@ -117,7 +117,7 @@ public class Binario {
       
       // Pasamos el valor a entero y comprobamos a qué número o letra corresponde y la añadimos.
       
-      int subparteBaseDecimal = (int)(Double.parseDouble(binarioToDecimal(subparte)));
+      int subparteBaseDecimal = (int)(Double.parseDouble(toDecimal(subparte)));
       
       if (subparteBaseDecimal < 10) 
         resultadoParteEntera += String.valueOf(subparteBaseDecimal);
@@ -155,7 +155,7 @@ public class Binario {
         
         // Pasamos el valor a entero y comprobamos a qué número o letra corresponde y la añadimos.
         
-        int subparteBaseDecimal = (int)(Double.parseDouble(binarioToDecimal(subparte)));
+        int subparteBaseDecimal = (int)(Double.parseDouble(toDecimal(subparte)));
         
         if (subparteBaseDecimal < 10) 
           resultadoParteDecimal += String.valueOf(subparteBaseDecimal);
@@ -192,7 +192,7 @@ public class Binario {
   
   // Método de Binario a Octal. Estático.
   
-  public static String binarioToOctal (String numero) {
+  public static String toOctal (String numero) {
     
     String[] descomponeArray = MetodosSimplificadores.descompone(numero);
     
@@ -219,7 +219,7 @@ public class Binario {
       
       // Pasamos el valor a entero y la añadimos.
       
-      int subparteBaseDecimal = (int)(Double.parseDouble(binarioToDecimal(subparte)));
+      int subparteBaseDecimal = (int)(Double.parseDouble(toDecimal(subparte)));
       
       resultadoParteEntera += String.valueOf(subparteBaseDecimal);
 
@@ -245,7 +245,7 @@ public class Binario {
         
         // Pasamos el valor a entero y lo añadimos.
         
-        int subparteBaseDecimal = (int)(Double.parseDouble(binarioToDecimal(subparte)));
+        int subparteBaseDecimal = (int)(Double.parseDouble(toDecimal(subparte)));
         
 
         resultadoParteDecimal += String.valueOf(subparteBaseDecimal);

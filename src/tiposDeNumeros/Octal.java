@@ -48,14 +48,14 @@ public class Octal {
   
   // Método de octal a octal. Estático.
   
-  public static String octalToOctal (String numero) {
+  public static String toOctal (String numero) {
     
     return numero;
   }
   
   // Método de octal a binario. Estático. Reutilización de código de Decimal a binario.
   
-  public static String octalToBinario (String numero) {
+  public static String toBinario (String numero) {
     
     String[] descomponeArray = MetodosSimplificadores.descompone(numero);
     
@@ -74,7 +74,7 @@ public class Octal {
       String numeroIndiceI = String.valueOf(parteOctalEntera.charAt(i));
       
       // Debemos comprobar al hacer el cambio que no perdemos ceros a la izquierda que van a ir intercalados.
-      String valorAIngresar = Decimal.decimalToBinario(String.valueOf(numeroIndiceI));
+      String valorAIngresar = Decimal.toBinario(String.valueOf(numeroIndiceI));
       while (valorAIngresar.length() < 3)
         valorAIngresar = "0" + valorAIngresar;
         
@@ -92,7 +92,7 @@ public class Octal {
         
         String numeroIndiceI = String.valueOf(parteOctalDecimal.charAt(i));
         
-        String valorAIngresar = Decimal.decimalToBinario(String.valueOf(numeroIndiceI));
+        String valorAIngresar = Decimal.toBinario(String.valueOf(numeroIndiceI));
         while (valorAIngresar.length() < 3)
           valorAIngresar = "0" + valorAIngresar;
           
@@ -115,14 +115,14 @@ public class Octal {
   
   // Método de Octal a Decimal. Estático. Reutilización de código.
   
-  public static String octalToDecimal (String numero) {
-    return Binario.binarioToDecimal(octalToBinario(numero));
+  public static String toDecimal (String numero) {
+    return Binario.toDecimal(toBinario(numero));
   }
   
   // Método de Octal a Hexadecimal. Estático. Reutilización de código.
   
-  public static String octalToHexadecimal (String numero) {
-    return Binario.binarioToHexadecimal(octalToBinario(numero));
+  public static String toHexadecimal (String numero) {
+    return Binario.toHexadecimal(toBinario(numero));
   }
   
   

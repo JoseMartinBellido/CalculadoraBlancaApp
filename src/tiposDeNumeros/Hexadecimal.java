@@ -50,13 +50,13 @@ public class Hexadecimal {
   
   // Método de Hexadecimal a Hexadecimal. Estático.
   
-  public static String hexadecimalToHexadecimal (String numero) {
+  public static String toHexadecimal (String numero) {
     return numero;
   }
   
   // Método de Hexadecimal a Binario. Estático. Reutilización de código de decimal a binario.
   
-  public static String hexadecimalToBinario (String numero) {
+  public static String toBinario (String numero) {
     
     String[] descomponeArray = MetodosSimplificadores.descompone(numero);
     
@@ -94,7 +94,7 @@ public class Hexadecimal {
       
       
       // Debemos comprobar al hacer el cambio que no perdemos ceros a la izquierda que van a ir intercalados.
-      String valorAIngresar = Decimal.decimalToBinario(String.valueOf(valorBaseDecimalCaracterI));
+      String valorAIngresar = Decimal.toBinario(String.valueOf(valorBaseDecimalCaracterI));
       while (valorAIngresar.length() < 4)
         valorAIngresar = "0" + valorAIngresar;
         
@@ -130,7 +130,7 @@ public class Hexadecimal {
         else 
           valorBaseDecimalCaracterI = Integer.parseInt(valorCaracterI);
         
-        String valorAIngresar = Decimal.decimalToBinario(String.valueOf(valorBaseDecimalCaracterI));
+        String valorAIngresar = Decimal.toBinario(String.valueOf(valorBaseDecimalCaracterI));
         while (valorAIngresar.length() < 4)
           valorAIngresar = "0" + valorAIngresar;
           
@@ -156,14 +156,14 @@ public class Hexadecimal {
   
   //Método de hexadecimal a Decimal. Estático. Reutilización de código.
     
-   public static String hexadecimalToDecimal (String numero) {
-     return Binario.binarioToDecimal(hexadecimalToBinario(numero));
+   public static String toDecimal (String numero) {
+     return Binario.toDecimal(toBinario(numero));
    }
    
    // Método de hexadecimal a octal. Estático. Reutilización de código.
    
-   public static String hexadecimalToOctal (String numero) {
-     return Binario.binarioToOctal(hexadecimalToBinario(numero));
+   public static String toOctal (String numero) {
+     return Binario.toOctal(toBinario(numero));
    }
    
   

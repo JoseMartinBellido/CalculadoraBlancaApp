@@ -12,7 +12,6 @@ public class MetodosSimplificadores{
   private static  Scanner sc;
   
   public MetodosSimplificadores() {
-    Scanner scanner = sc;
   }
   
   // Setter
@@ -182,43 +181,43 @@ public class MetodosSimplificadores{
     
     // binario a ->
     if (tipoInicial.equals("B") && tipoFinal.equals("D")) {
-      System.out.println(Binario.binarioToDecimal(numeroIntroducido));
+      System.out.println(Binario.toDecimal(numeroIntroducido));
     } else if (tipoInicial.equals("B") && tipoFinal.equals("H")) {
-      System.out.println(Binario.binarioToHexadecimal(numeroIntroducido));
+      System.out.println(Binario.toHexadecimal(numeroIntroducido));
     } else if (tipoInicial.equals("B") && tipoFinal.equals("O")) {
-      System.out.println(Binario.binarioToOctal(numeroIntroducido));
+      System.out.println(Binario.toOctal(numeroIntroducido));
     } else if (tipoInicial.equals("B") && tipoFinal.equals("B")) {
-      System.out.println(Binario.binarioToBinario(numeroIntroducido));
+      System.out.println(Binario.toBinario(numeroIntroducido));
       
     // decimal a ->  
     }else if (tipoInicial.equals("D") && tipoFinal.equals("D")) {
-      System.out.println(Decimal.decimalToDecimal(numeroIntroducido));
+      System.out.println(Decimal.toDecimal(numeroIntroducido));
     }else if (tipoInicial.equals("D") && tipoFinal.equals("H")) {
-      System.out.println(Decimal.decimalToHexadecimal(numeroIntroducido));
+      System.out.println(Decimal.toHexadecimal(numeroIntroducido));
     }else if (tipoInicial.equals("D") && tipoFinal.equals("O")) {
-      System.out.println(Decimal.decimalToOctal(numeroIntroducido));
+      System.out.println(Decimal.toOctal(numeroIntroducido));
     }else if (tipoInicial.equals("D") && tipoFinal.equals("B")) {
-      System.out.println(Decimal.decimalToBinario(numeroIntroducido));
+      System.out.println(Decimal.toBinario(numeroIntroducido));
     
     // Octal a ->
     }else if (tipoInicial.equals("O") && tipoFinal.equals("D")) {
-      System.out.println(Octal.octalToDecimal(numeroIntroducido));
+      System.out.println(Octal.toDecimal(numeroIntroducido));
     }else if (tipoInicial.equals("O") && tipoFinal.equals("H")) {
-      System.out.println(Octal.octalToHexadecimal(numeroIntroducido));
+      System.out.println(Octal.toHexadecimal(numeroIntroducido));
     }else if (tipoInicial.equals("O") && tipoFinal.equals("O")) {
-      System.out.println(Octal.octalToOctal(numeroIntroducido));
+      System.out.println(Octal.toOctal(numeroIntroducido));
     }else if (tipoInicial.equals("O") && tipoFinal.equals("B")) {
-      System.out.println(Octal.octalToBinario(numeroIntroducido));
+      System.out.println(Octal.toBinario(numeroIntroducido));
     
     // Hexadecimal a ->
     }else if (tipoInicial.equals("H") && tipoFinal.equals("D")) {
-      System.out.println(Hexadecimal.hexadecimalToDecimal(numeroIntroducido));
+      System.out.println(Hexadecimal.toDecimal(numeroIntroducido));
     }else if (tipoInicial.equals("H") && tipoFinal.equals("H")) {
-      System.out.println(Hexadecimal.hexadecimalToHexadecimal(numeroIntroducido));
+      System.out.println(Hexadecimal.toHexadecimal(numeroIntroducido));
     }else if (tipoInicial.equals("H") && tipoFinal.equals("O")) {
-      System.out.println(Hexadecimal.hexadecimalToOctal(numeroIntroducido));
+      System.out.println(Hexadecimal.toOctal(numeroIntroducido));
     }else if (tipoInicial.equals("H") && tipoFinal.equals("B")) {
-      System.out.println(Hexadecimal.hexadecimalToBinario(numeroIntroducido));  
+      System.out.println(Hexadecimal.toBinario(numeroIntroducido));  
       
     }
   }
@@ -251,13 +250,13 @@ public class MetodosSimplificadores{
     
     // Ya están los tipos en mayúsculas por como se han pedido
     if (tipo1.equals("D"))
-      numero1BaseDecimal = Decimal.decimalToDecimal(numero1);
+      numero1BaseDecimal = Decimal.toDecimal(numero1);
     else if (tipo1.equals("O"))
-      numero1BaseDecimal = Octal.octalToDecimal(numero1);
+      numero1BaseDecimal = Octal.toDecimal(numero1);
     else if (tipo1.equals("H"))
-      numero1BaseDecimal = Hexadecimal.hexadecimalToDecimal(numero1);
+      numero1BaseDecimal = Hexadecimal.toDecimal(numero1);
     else
-      numero1BaseDecimal = Binario.binarioToDecimal(numero1);
+      numero1BaseDecimal = Binario.toDecimal(numero1);
     
     Decimal decimal1 = new Decimal(numero1BaseDecimal);
     
@@ -267,13 +266,13 @@ public class MetodosSimplificadores{
     
     // Ya están los tipos en mayúsculas por como se han pedido
     if (tipo2.equals("D"))
-      numero2BaseDecimal = Decimal.decimalToDecimal(numero2);
+      numero2BaseDecimal = Decimal.toDecimal(numero2);
     else if (tipo2.equals("O"))
-      numero2BaseDecimal = Octal.octalToDecimal(numero2);
+      numero2BaseDecimal = Octal.toDecimal(numero2);
     else if (tipo2.equals("H"))
-      numero2BaseDecimal = Hexadecimal.hexadecimalToDecimal(numero2);
+      numero2BaseDecimal = Hexadecimal.toDecimal(numero2);
     else
-      numero2BaseDecimal = Binario.binarioToDecimal(numero2);
+      numero2BaseDecimal = Binario.toDecimal(numero2);
     
     Decimal decimal2 = new Decimal(numero2BaseDecimal);
     
@@ -293,13 +292,13 @@ public class MetodosSimplificadores{
     String resultadoAImprimir;
     
     if (tipoFinal.equals("D"))
-      resultadoAImprimir = Decimal.decimalToDecimal(resultadoOperacion);
+      resultadoAImprimir = Decimal.toDecimal(resultadoOperacion);
     else if (tipoFinal.equals("H"))
-      resultadoAImprimir = Decimal.decimalToHexadecimal(resultadoOperacion);
+      resultadoAImprimir = Decimal.toHexadecimal(resultadoOperacion);
     else if (tipoFinal.equals("O"))
-      resultadoAImprimir = Decimal.decimalToOctal(resultadoOperacion);
+      resultadoAImprimir = Decimal.toOctal(resultadoOperacion);
     else
-      resultadoAImprimir = Decimal.decimalToBinario(resultadoOperacion);
+      resultadoAImprimir = Decimal.toBinario(resultadoOperacion);
     
     return resultadoAImprimir;
     

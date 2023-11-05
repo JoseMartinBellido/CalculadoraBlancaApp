@@ -71,10 +71,10 @@ public class Calculadora {
         
         System.out.println(MetodosSimplificadores.realizaOperacion
             (tipo1, numeroIntroducido1, tipo2, numeroIntroducido2, operacion, tipoFinal));
-        
-        
-        System.out.println("\n");
+
       }
+      
+      System.out.println();
       
     } while (!flag.equals("S"));
 

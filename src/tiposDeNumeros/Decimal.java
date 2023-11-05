@@ -37,7 +37,7 @@ public class Decimal {
   
   // Método decimal a decimal. Estático.
   
-  public static String decimalToDecimal (String numero) {
+  public static String toDecimal (String numero) {
     
     return numero;
   }
@@ -45,7 +45,7 @@ public class Decimal {
   
   // Método decimal a binario. Estático.
   
-  public static String decimalToBinario (String numero) {
+  public static String toBinario (String numero) {
     
     String[] descomponeArray = MetodosSimplificadores.descompone(numero);
     
@@ -103,17 +103,17 @@ public class Decimal {
   
   // Método decimal a octal. Estático. Reutilizamos código
   
-  public static String decimalToOctal (String numero) {
+  public static String toOctal (String numero) {
     
-    return Binario.binarioToOctal(decimalToBinario(numero));
+    return Binario.toOctal(toBinario(numero));
     
   }
   
   // Método decimal a Hexadecimal. Estático. Reutilizamos código
   
-  public static String decimalToHexadecimal (String numero) {
+  public static String toHexadecimal (String numero) {
     
-    return Binario.binarioToHexadecimal(decimalToBinario(numero));
+    return Binario.toHexadecimal(toBinario(numero));
     
   }
   
