@@ -2,7 +2,7 @@ package tiposDeNumeros;
 
 import utilidades.MetodosSimplificadores;
 
-public class Octal {
+public class Octal implements InterfazConversion {
   
   // Datos de clase
   private String numeroOctal;

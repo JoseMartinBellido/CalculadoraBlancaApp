@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import utilidades.MetodosSimplificadores;
 
-public class Binario {
+public class Binario implements InterfazConversion{
 
   String numeroBinario;
   

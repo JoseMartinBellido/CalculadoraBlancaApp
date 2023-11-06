@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import utilidades.MetodosSimplificadores;
 
-public class Decimal {
+public class Decimal implements InterfazConversion, InterfazOperaciones{
 
   String numeroDecimal;
   

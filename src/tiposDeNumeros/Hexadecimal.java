@@ -2,7 +2,7 @@ package tiposDeNumeros;
 
 import utilidades.MetodosSimplificadores;
 
-public class Hexadecimal {
+public class Hexadecimal implements InterfazConversion {
 
   // Datos de clase
   private String numeroHexadecimal;
